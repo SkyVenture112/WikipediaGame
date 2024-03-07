@@ -1,4 +1,5 @@
 console.log("Starting fetch request...");
+var abortController = new AbortController();
 document.getElementById('wiki-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -6,7 +7,7 @@ document.getElementById('wiki-form').addEventListener('submit', function(event) 
     var finishPage = document.getElementById('finish-page').value;
 
     console.log("Sending fetch request...");
-    fetch('/find_path', {
+    fetch('/find_path', { signal: abortController.signal,
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -70,3 +71,6 @@ document.getElementById('wiki-form').addEventListener('submit', function(event) 
     });
 });
 console.log("Finished fetch request...");
+document.getElementById('abort-button').addEventListener('click', function() {
+    abortController.abort();
+});
