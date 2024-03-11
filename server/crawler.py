@@ -3,11 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 import re
 
-<<<<<<< HEAD
 TIMEOUT = 300  # time limit in seconds for the search
-=======
-TIMEOUT = 120  # time limit in seconds for the search
->>>>>>> 9d9c4b2b8bb5a36e3db9d474181bf724c76f217d
 
 def get_links(page_url):
     print(f"Fetching page: {page_url}")
