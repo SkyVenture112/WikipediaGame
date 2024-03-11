@@ -25,6 +25,7 @@ def find_path():
         path, logs, time, discovered = crawler.find_path(start_page, finish_page)
 
         elapsed_time = logs[-1]
+        print(type(elapsed_time))  # Add this line
         response = jsonify({'path': path, 'logs': logs, 'time': time, 'discovered': discovered, 'progress': elapsed_time / TIMEOUT * 100})
         print(response)
         return response
