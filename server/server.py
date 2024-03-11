@@ -4,6 +4,7 @@ from flask_limiter.util import get_remote_address
 import crawler
 
 RATE_LIMIT = "5/minute"  # requests per minute and IP address
+TIMEOUT = 60  # maximum time allowed for the operation, in seconds
 
 app = Flask(__name__, static_folder='../client')
 # limiter = Limiter(app, key_func=lambda: request.remote_addr)
