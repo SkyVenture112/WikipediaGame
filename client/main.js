@@ -68,6 +68,9 @@ document.getElementById('wiki-form').addEventListener('submit', function(event) 
         statsHtml += '<li>Number of discovered pages: ' + data.discovered + '</li>';
         statsHtml += '</ul>';
         statsElement.innerHTML = statsHtml;
+        // update progress bar
+        var progressBar = document.getElementById('progress-bar');
+        progressBar.style.width = data.progress + '%';
     });
 });
 console.log("Finished fetch request...");
