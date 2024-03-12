@@ -1,5 +1,6 @@
 console.log("Starting fetch request...");
 var abortController = new AbortController();
+var fetchInProgress = false;
 document.getElementById('wiki-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -7,6 +8,7 @@ document.getElementById('wiki-form').addEventListener('submit', function(event) 
     var finishPage = document.getElementById('finish-page').value;
 
     console.log("Sending fetch request...");
+    fetchInProgress = true;
     fetch('/find_path', { signal: abortController.signal,
         method: 'POST',
         headers: {
@@ -69,11 +71,18 @@ document.getElementById('wiki-form').addEventListener('submit', function(event) 
         statsHtml += '</ul>';
         statsElement.innerHTML = statsHtml;
         // update progress bar
-        var progressBar = document.getElementById('progress-bar');
-        progressBar.style.width = data.progress + '%';
+        updateProgressBar(data.progress);
     });
 });
+
+function updateProgressBar(progress) {
+    var progressBar = document.getElementById('progress-bar');
+    progressBar.style.width = progress + '%';
+}
 console.log("Finished fetch request...");
 document.getElementById('abort-button').addEventListener('click', function() {
-    abortController.abort();
+    if (fetchInProgress) {
+        abortController.abort();
+        fetchInProgress = false;
+    }
 });
