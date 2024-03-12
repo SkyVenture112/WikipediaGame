@@ -25,9 +25,13 @@ def find_path():
         path, logs, time, discovered = crawler.find_path(start_page, finish_page)
 
         elapsed_time = logs[-1]
-        response = jsonify({'path': path, 'logs': logs, 'time': time, 'discovered': discovered, 'progress': elapsed_time / TIMEOUT * 100})
-        print(response)
-        return response
+        try:
+            response = jsonify({'path': path, 'logs': logs, 'time': time, 'discovered': discovered, 'progress': elapsed_time / TIMEOUT * 100})
+            print(response)
+            return response
+        except Exception as e:
+            app.logger.error(f"Error occurred while creating JSON response: {e}")
+            return jsonify({'error': 'An error occurred while creating JSON response'}), 500
     except crawler.TimeoutErrorWithLogs as e:
         app.logger.error(f"Error occurred: {e}")
         return jsonify({'error': str(e), 'logs': e.logs, 'time': e.time, 'discovered': e.discovered}), 500
