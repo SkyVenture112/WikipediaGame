@@ -46,5 +46,13 @@ def stream_logs():
             yield f"data: {log}\n\n"
     return Response(generate(), mimetype='text/event-stream')
 
+from threading import Event
+abort_event = Event()
+
+@app.route('/abort', methods=['POST'])
+def abort_search():
+    abort_event.set()
+    return jsonify({'status': 'Search aborted'}), 200
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001, threaded=True)

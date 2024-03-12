@@ -82,6 +82,7 @@ function updateProgressBar(progress) {
 console.log("Finished fetch request...");
 document.getElementById('abort-button').addEventListener('click', function() {
     if (fetchInProgress) {
+        fetch('/abort', { method: 'POST' });
         abortController.abort();
         fetchInProgress = false;
     }
