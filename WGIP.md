@@ -15,7 +15,7 @@ Here is an aspect in which the breadth-first search algorithm for this program c
 
         def calculate_similarity(embedding1, embedding2):
            use the NLP model to calculate the similarity between two embeddings
-           return the degree of similarity // This would be used to choose which links to travel to later in the search ("guiding" the algorithm)
+           return the degree of similarity // This would be used to choose which links to travel to later in the search
 
         for each link in the current page:
             if page has not been visited:
