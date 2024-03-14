@@ -16,9 +16,9 @@ There are a few aspects in which the breadth-first search algorithm for this pro
 
     __Pseudo-Code Representation:__
 
-   ```
-pattern = compile_regular_expression(r'^https://en\.wikipedia\.org\wiki/[^:]*$')  
+   
+       pattern = compile_regular_expression(r'^https://en\.wikipedia\.org\wiki/[^:]*$')  
 
-if the link matches the defined regular expression pattern and does not contain '#":  
-  add the link to the set of filtered links
-  ```
+       if the link matches the defined regular expression pattern and does not contain '#":  
+           add the link to the set of filtered links
+  
