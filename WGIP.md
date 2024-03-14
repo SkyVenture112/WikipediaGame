@@ -10,20 +10,20 @@ Here is an aspect in which the breadth-first search algorithm for this program c
 
 
         def embed_text(text):
-           embedding = BERT_embed(text)
-           return embeddings
+           use the NLP model to embed the text
+           return the embedding
   
 
         for each link in the current page:
             if page has not been visited:
-                page_embedding = embed_text(page.text)
-                similarity_score = calculate_similarity(current_page_embedding, page_embedding)
+                embed the link
+                calculate the similarity of the page and the current page
                 append page to the discovered list
 
   
         def calculate_similarity(embedding1, embedding2):
-           similarity_score = BERT_calculate_similarity(embedding1, embedding2)
-           return similarity_score // This would be used to choose which links to travel to later in the search ("guiding" the algorithm)
+           use the NLP model to calculate the similarity between two pages
+           return the degree of similarity // This would be used to choose which links to travel to later in the search ("guiding" the algorithm)
 
         
   
