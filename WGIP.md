@@ -9,7 +9,6 @@ There are a few aspects in which the breadth-first search algorithm for this pro
 
   __Pseudo-Code Representation:__ ```
   create a new set
-  
   intialize it to having the start_page as its sole value
                                   ```
 
