@@ -8,7 +8,7 @@ There are a few aspects in which the breadth-first search algorithm for this pro
   to the discovered list, that could potentially disrupt the algorithm's accuracy and efficiency. It is therefore much more advisable to use a list in this instance.
 
   __Pseudo-Code Representation:__ ```
-  create a new set    
+  create a new set </br>    
   intialize it to having the start_page as its sole value  
                                   ```
 
