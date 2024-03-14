@@ -1,4 +1,5 @@
 # Wikipedia Game Improvement Proposal
+Jack Dippel
 
 # Description
 Here are two aspects in which the breadth-first search algorithm for this program could be optimized:
