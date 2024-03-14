@@ -19,8 +19,10 @@ Here is an aspect in which the breadth-first search algorithm for this program c
                 embed the link
                 calculate the similarity of the page and the current page
                 append page to the discovered list
-
+            else if the page is the destination page:
+                return the page
   
+
         def calculate_similarity(embedding1, embedding2):
            use the NLP model to calculate the similarity between two embeddings
            return the degree of similarity // This would be used to choose which links to travel to later in the search ("guiding" the algorithm)
