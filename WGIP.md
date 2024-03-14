@@ -8,12 +8,15 @@ There are a few aspects in which the breadth-first search algorithm for this pro
   to the discovered list, that could potentially disrupt the algorithm's accuracy and efficiency. It is therefore much more advisable to use a list in this instance.
 
   __Pseudo-Code Representation:__ ```
-  discovered = set([start_page])
+  create a new set
+  
+  intialize it to having the start_page as its sole value
                                   ```
 
 *  The regular expression matching feature that is present within the get_links() function in crawler.py currently compiles the regular expression pattern each time get_links() is called. This is very computationally inefficient, as it wastes resources each time a new link is discovered (especially on pages with an immense amount of links). A potential solution to this could be the regular expression pattern being compiled once and then utilized each time a page must be scraped for links. This would reduce the overall time required to scrape not only the starting page, but every page traveled to after it.
 
-__Pseudo-Code Representation:__ ```
-pattern = re.compile(r'^https://en\.wikipedia\.org\wiki/[^:]*$')
-links = [link for link in all_links if pattern.match(link) and '#' not in link]
-                                ```
+    __Pseudo-Code Representation:__ 
+pattern = compile_regular_expression(r'^https://en\.wikipedia\.org\wiki/[^:]*$')
+
+if the link matches the defined pattern and does not contain '#":
+  add the link to the set of filtered lists
