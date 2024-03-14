@@ -2,24 +2,32 @@
 Jack Dippel
 
 # Description
-Here are two aspects in which the breadth-first search algorithm for this program could be optimized:
+Here is an aspect in which the breadth-first search algorithm for this program could be optimized:
 
-* The algorithm can implement a set rather than a list to contain discovered pages. Sets are quite literally more efficient than lists regardless of what kind of operation is used. This would both allow for a
-  a quicker overall runtime. Additionally, it would introduce an additional form of error checking considering that sets cannot contain duplicate values. If an additional page were somehow to be added twice or more
-  to the discovered list, that could potentially disrupt the algorithm's accuracy and efficiency. It is therefore much more advisable to use a list in this instance.
-
+* The algorithm can implement an open-source natural language processing model such as Google's BERT. This would allow the algorithm to more thoroughly comprehend the semantics of the words it processes and therefore devise a path to the final page much more quickly. BERT, in particular, is a bi-directional model, meaning it uses every word in a link to grasp its overall meaning. It is specifically trained to understand semantics and sentiment, and can also generate word embeddings to further augment the algorithm's efficiency. Links would be able to be categorized into distinct groups, thereby reducing the amount of time wasted on traversing paths that ultimately lead to completely unrelated pages.
+  
   __Pseudo-Code Representation:__
 
-      create a new set
-      initialize it to having the start_page as its sole value  
-                                  
-*  The regular expression matching feature that is present within the get_links() function in crawler.py currently compiles the regular expression pattern each time get_links() is called. This is very computationally inefficient, as it wastes resources each time a new link is discovered (especially on pages with an immense amount of links). A potential solution to this could be the regular expression pattern being compiled once and then utilized each time a page must be scraped for links. This would reduce the overall time required to scrape not only the starting page, but every page traveled to after it.
 
-    __Pseudo-Code Representation:__
+        def embed_text(text):
+           embedding = BERT_embed(text)
+           return embeddings
+  
+
+        for each link in the current page:
+            if page has not been visited:
+                page_embedding = embed_text(page.text)
+                similarity_score = calculate_similarity(current_page_embedding, page_embedding)
+                append page to the discovered list
+
+  
+        def calculate_similarity(embedding1, embedding2):
+           similarity_score = BERT_calculate_similarity(embedding1, embedding2)
+           return similarity_score // This would be used to choose which links to travel to later in the search ("guiding" the algorithm)
+
+        
+  
 
    
-       pattern = compile_regular_expression(r'^https://en\.wikipedia\.org\wiki/[^:]*$')  
-
-       if the link matches the defined regular expression pattern and does not contain '#":  
-           add the link to the set of filtered links
+       
   
