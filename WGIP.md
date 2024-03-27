@@ -26,9 +26,9 @@ Here is an aspect in which the breadth-first search algorithm for this program c
                 return the page
 
   # Milestones
-  *
-  *
-  *
+  * 3/28 - Ensure that all necessary packages and libraries have been installed (i.e. the transformers Python library, PyTorch, etc.). This will allow the development environment to actually implement BERT's functions and capabilities.
+  * 4/4 - Choose a pre-trained BERT model from HuggingFace and load it into the algorithm. For the sake of simplicity and error avoidance, the program will (currently) not fine-tune BERT on a dataset. This may change if BERT does not optimize the algorithm as effectively as it would were it fine-tuned on a dataset of Wikipedia pages.
+  * 4/9 - Implement BERT's tokenization and masking feature to embed the input text. This would allow for the algorithm to be "guided" based on the content of each Wikipedia page.
   
 
        
