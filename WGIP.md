@@ -30,7 +30,7 @@ Here is an aspect in which the breadth-first search algorithm for this program c
 
   * 4/4 - Choose a pre-trained BERT model from HuggingFace and load it into the algorithm. For the sake of simplicity and error avoidance, the program will (currently) not fine-tune BERT on a dataset. This may change if BERT does not optimize the algorithm as effectively as it would were it fine-tuned on a dataset of Wikipedia pages. **(Complete)**
     
-  * 4/16 - Implement BERT's tokenization and masking feature to embed the input text. This would allow for the algorithm to be "guided" based on the content of each Wikipedia page. Additionally, utilize cosine similarity in Python to calculate the degree of similarity between the now-embedded vectors. **(Incomplete)**
+  * 4/16 - Implement BERT's tokenization and masking feature to embed the input text. This would allow for the algorithm to be "guided" based on the content of each Wikipedia page. Additionally, utilize cosine similarity in Python to calculate the degree of similarity between the now-embedded vectors. **Complete**
     
   * 4/18 - Finish completely integrating BERT's functions with the algorithm and clean up any code as necessary. **(Incomplete)**
   
