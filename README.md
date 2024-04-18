@@ -16,7 +16,6 @@ pip install requests
 pip install torch
 pip install numpy
 pip install bs4
-
 ```
 
 ## Execution
