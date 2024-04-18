@@ -6,7 +6,7 @@ from transformers import DistilBertTokenizer, DistilBertModel  # I used DistiLBE
 from urllib.parse import urljoin
 import numpy as np  # These two libraries are used to calculate the cosine similarities between two vectors
 from numpy.linalg import norm
-import torch
+import torch # PyTorch is a library used for machine learning
 
 tokenizer = DistilBertTokenizer.from_pretrained( "distilbert-base-uncased")  # Each page name must be tokenized first
 model = DistilBertModel.from_pretrained("distilbert-base-uncased")  # The pages will then be run through an embedding layer and converted to vectors
@@ -17,7 +17,6 @@ WIKIPEDIA_BASE_URL = "https://en.wikipedia.org/wiki/" # Constant string for the 
 
 
 def format_wikipedia_url(page_name): # Formats the user's input as an actual Wikipedia page
-
   return urljoin(WIKIPEDIA_BASE_URL, page_name)
 
 
@@ -35,8 +34,8 @@ def get_links(page_url):
 
 
 def embed_text(text):
-  inputs = tokenizer(text, return_tensors="pt", max_length=512, truncation=True, padding="max_length")
-  with torch.no_grad():
+  inputs = tokenizer(text, return_tensors="pt", max_length=512, truncation=True, padding="max_length") # Utilizes PyTorch tensors, which map between vectors
+  with torch.no_grad(): # Disables gradient calculation, which reduces memory consumption and therefore makes the program less computationally expensive
     outputs = model(**inputs)
   embeddings = outputs.last_hidden_state[:, 0, :].numpy()  
   return embeddings
@@ -92,8 +91,7 @@ def find_path(start_page, finish_page):
         discovered.add(next_url)
         queue.append((next_url, path + [next_url], depth + 1, next_embedding))
 
-    # Select the best link based on cosine similarity
-    most_similar_link = find_most_similar_link(queue, finish_embedding)
+    most_similar_link = find_most_similar_link(queue, finish_embedding) # Selects the best link based on cosine similarity
     if most_similar_link:
       queue.remove(most_similar_link)
       queue.insert(0, most_similar_link)
@@ -116,7 +114,7 @@ class TimeoutErrorWithLogs(Exception):
 
 
 def main():
-
+  
   print("\nWelcome to the Wikipedia Search Game! This search algorithm is powered by DistilBERT.\n")
 
   start_page = input("Please enter a start page: ")
@@ -125,7 +123,7 @@ def main():
   try:
     shortest_path = find_path(start_page, finish_page)
     print(f"\nShortest path from {start_page} to {finish_page}:")
-    print(" -> ".join([page.split('/')[-1].replace("_", " ").replace("wiki ", "")for page in shortest_path]))
+    print(" -> ".join([page.split('/')[-1].replace("_", " ").replace("wiki ", "") for page in shortest_path])) # Converts the pages into a readable format
   except TimeoutErrorWithLogs:
     print(TimeoutErrorWithLogs)
 
