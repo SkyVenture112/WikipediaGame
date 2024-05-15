@@ -21,7 +21,8 @@ pip install bs4
 ```
 git clone https://github.com/SkyVenture112/WikipediaGame
 cd WikipediaGame/server
-python crawler.py
+source setup.sh
+python server.py
 ```
 ## Testing
 
