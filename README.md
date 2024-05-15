@@ -32,8 +32,9 @@ I used a variety of different start and end pages that ranged in similarity (i.e
 
 - Cannot run efficiently in environments with minimal resources (i.e Replit)
 - The further apart two pages are, the less effective the algorithm becomes
-- Does not function when non-existent Wikipedia pages are entered
+- Can be incredibly slow when network connectivity is poor (to the point that the algorithm remains idle for long periods of time)
 
 ## Future Work
 
-- Potentially utilize most of a given page (rather than just its title) to optimize the search 
+- Potentially utilize most of a given page (rather than just its title) to optimize the search
+- Devise another means of accessing Wikipedia pages such that network connectivity does not significantly impact the algorithm's runtime
