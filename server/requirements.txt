@@ -8,4 +8,4 @@ beautifulsoup4==4.9.3
 Flask-Limiter
 transformers==4.6.1
 numpy==1.19.5
-torch==1.8.1
+torch==2.3.0
