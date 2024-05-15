@@ -1,4 +1,4 @@
-# WikipediaGame
+# Wikipedia Game
 
 This program utilizes DistilBERT to optimize the search algorithm between a starting Wikipedia page and an ending Wikipedia page. The process starts by collecting every link on the start page and embedding them via DistilBERT. The cosine similarity between each link and that of the end page is then calculated, and the link with the highest similarity is then chosen to follow. The cycle repeats itself until the end page is reached.
 
