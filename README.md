@@ -32,6 +32,7 @@ I used a variety of different start and end pages that ranged in similarity (i.e
 
 - Cannot run efficiently in environments with minimal resources (i.e Replit)
 - The further apart two pages are, the less effective the algorithm becomes
+- Does not function when non-existent Wikipedia pages are entered
 
 ## Future Work
 
