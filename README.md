@@ -31,7 +31,8 @@ I used a variety of different start and end pages that ranged in similarity (i.e
 ## Limitations
 
 - Cannot run efficiently in environments with minimal resources (i.e Replit)
+- The further apart two pages are, the less effective the algorithm becomes
 
-## Further Ideas
+## Future Work
 
 - Potentially utilize most of a given page (rather than just its title) to optimize the search 
