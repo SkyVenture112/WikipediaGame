@@ -32,7 +32,7 @@ Here is an aspect in which the breadth-first search algorithm for this program c
     
   * 4/16 - Implement BERT's tokenization and masking feature to embed the input text. This would allow for the algorithm to be "guided" based on the content of each Wikipedia page. Additionally, utilize cosine similarity in Python to calculate the degree of similarity between the now-embedded vectors. **(Complete)**
     
-  * 4/18 - Finish completely integrating BERT's functions with the algorithm and clean up any code as necessary. **(Complete)**
+  * 5/16 - Finish completely integrating BERT's functions with the algorithm and clean up any code as necessary. **(Complete)**
   
 
        
