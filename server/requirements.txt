@@ -6,3 +6,6 @@ itsdangerous>=2.0
 requests==2.25.1
 beautifulsoup4==4.9.3
 Flask-Limiter
+transformers==4.6.1
+numpy==1.19.5
+torch==1.8.1
